@@ -1,0 +1,25 @@
+{
+  "student": [
+    {
+      "name": "Nam Tran",
+      "email": "namtrantrong18@gmail.com",
+      "age": "23",
+      "gender": "Male",
+      "id": 2
+    },
+    {
+      "name": "Minh Nguyen",
+      "email": "lemepe3030@crtsec.com",
+      "age": "24",
+      "gender": "Other",
+      "id": 5
+    },
+    {
+      "name": "Long Nguyen",
+      "email": "longdoan123@gmail.com",
+      "age": "23",
+      "gender": "Male",
+      "id": 6
+    }
+  ]
+}
