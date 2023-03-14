@@ -33,23 +33,7 @@ function Validator(options) {
         return !errorMessage
     }
 
-    // 1. Lọc ra các rule và đối số truyền vào rule
     if (formElement) {
-        // Trường hợp bấm submit
-        // formElement.onsubmit = function (e) {
-        //     e.preventDefault();
-
-        //     var isFormValid = true;
-        //     // Lặp qua từng rule và validate 
-        //     options.rules.forEach(function (rule) {
-        //         var inputElement = formElement.querySelector(rule.selector)
-        //         var isValid = validate(inputElement, rule);
-        //         if (!isValid) {
-        //             isFormValid = false;
-        //         }
-        //     });
-        // }
-
         // Lặp qua mỗi rule và xử lý (lắng nghe sự kiện blur, input,../.)
         options.rules.forEach(function (rule) {
             // Lưu lại các rule cho mỗi input
@@ -66,7 +50,7 @@ function Validator(options) {
                 inputElement.onblur = function () {
                     validate(inputElement, rule)
                 }
-                // Xử lý trường hơph nhập vào input
+                // Xử lý trường hợp nhập vào input
                 inputElement.oninput = function () {
                     var errorElement = getParent(inputElement, options.formGroupSelector).querySelector(options.errorSelector)
                     errorElement.innerText = ''
@@ -77,10 +61,6 @@ function Validator(options) {
     }
 }
 
-// Định nghĩa các rules
-// Nguyên tắc hoạt động của các rules
-// 1. Khi có lỗi => Trả ra message lỗi
-// 2. Khi hợp lệ thì không trả ra cái gì
 Validator.isRequire = function (selector, message) {
     return {
         selector: selector,
